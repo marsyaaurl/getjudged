@@ -1,66 +1,27 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Navbar from './components/Navbar';
+import { ArrowRight } from 'lucide-react';
 
-export default function Home() {
+export default function Home(){
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <div>
+        <Navbar />
+      </div>
+      <div className='flex flex-col items-center justify-center mt-11 mx-10 gap-y-5 bg-[#F5BD1E]/5 shadow-[0_0px_30px_rgba(245,189,30,0.4)] h-[72vh] px-10 py-10 rounded-3xl'>
+        <div className='flex flex-col items-center justify-center'>
+          <h1 className='font-black text-6xl text-gray-600 text-center'><i className='text-[#F5BD1E]'>Confess</i> Your <span className='text-[#FF1592]'>MESS </span>—</h1>
+          <h1 className='font-black text-6xl text-gray-600 text-center'>Let’s See If <i className='text-[#FF1592]'>YOU</i> <span className='text-[#F5BD1E]'>Walk Out</span></h1>
+          <h1 className='font-black text-6xl text-gray-600 text-center'><span className='text-[#FF1592]'>GUILTY</span> or <span className='text-[#F5BD1E]'>INNOCENT</span></h1>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+        <div className='flex flex-row items-center justify-center gap-x-3 bg-[#FF1592] rounded-full px-4 py-2 hover:shadow-[0_5px_50px_rgba(225,17,128,0.4)]'>
+          <a href='/Confess'>
+            <button  className='text-white font-bold text-xl'>
+              Let's Get Your Verdict
+            </button>
           </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          <ArrowRight className='text-white font-bold'/>
         </div>
-      </main>
-    </div>
-  );
+      </div>
+    </>
+  )
 }
